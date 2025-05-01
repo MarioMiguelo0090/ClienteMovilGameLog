@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ReseniaJugadores"
+        android:background="@color/gray"
+        android:padding="10dp">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="@color/white"
+            app:tabIndicatorColor="@color/light_blue"
+            app:tabIndicatorHeight="4dp"
+            android:background="@color/gray">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabTodos"
+                android:text="@string/tab_Todos"
+                android:icon="@null"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabAmigos"
+                android:text="@string/tab_Amigos"
+                android:icon="@null"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+        </com.google.android.material.tabs.TabLayout>
+
+
+
+    </LinearLayout>
+</layout>

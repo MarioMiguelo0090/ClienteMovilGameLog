@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".BusquedaPerfil"
+        android:background="@color/gray"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_busqueda_perfil"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="@string/search_BuscarPerfil"
+            android:background="@color/white"
+            android:textColorHint="@color/black"
+            android:iconifiedByDefault="false" />
+
+
+    </LinearLayout>
+</layout>
