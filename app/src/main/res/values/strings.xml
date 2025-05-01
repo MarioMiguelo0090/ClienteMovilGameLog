@@ -34,6 +34,14 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="msj_correo_invalido">Correo electrónico inválido</string>
+    <string name="msj_contrasenia_invalida">Contraseña invalida</string>
+    <string name="msj_nombre_invalido">Nombre inválido</string>
+    <string name="msj_apellido_invalido">Apellido inválido</string>
+    <string name="msj_nombre_usuario_invalido">Solo letras y números, máximo 50 caracteres</string>
+    <string name="msj_descripcion_invalido">Máximo 250 caracteres</string>
+    <string name="msj_registro_usuario_exitoso">Los datos han sido registrados de manera exitosa</string>
+
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
