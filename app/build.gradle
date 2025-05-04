@@ -6,6 +6,12 @@ android {
     namespace 'com.example.gamelog'
     compileSdk 35
 
+    def rawgApiKey = project.rootProject.file("local.properties")
+            .readLines()
+            .find { it.startsWith("RAWG_API_KEY=") }
+            ?.split("=")
+            ?.getAt(1)
+
     defaultConfig {
         applicationId "com.example.gamelog"
         minSdk 26
@@ -14,6 +20,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "RAWG_API_KEY", "\"${rawgApiKey}\""
+
     }
 
     buildTypes {
@@ -31,6 +39,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 }
 
@@ -44,6 +53,10 @@ dependencies {
     implementation libs.lifecycle.viewmodel.ktx
     implementation libs.navigation.fragment
     implementation libs.navigation.ui
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core

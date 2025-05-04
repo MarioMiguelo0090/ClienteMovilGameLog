@@ -39,8 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void abrirMenuPrincipal(){
         if(validarCredenciales()){
+            getSharedPreferences("loginPrefs", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isLoggedIn", true)
+                    .apply();
             Intent intentMenuActivity=new Intent(this, MenuActivity.class);
             startActivity(intentMenuActivity);
+            finish();
         }
     }
 

@@ -38,9 +38,12 @@
     <string name="msj_contrasenia_invalida">Contraseña invalida</string>
     <string name="msj_nombre_invalido">Nombre inválido</string>
     <string name="msj_apellido_invalido">Apellido inválido</string>
-    <string name="msj_nombre_usuario_invalido">Solo letras y números, máximo 50 caracteres</string>
-    <string name="msj_descripcion_invalido">Máximo 250 caracteres</string>
+    <string name="msj_nombre_usuario_invalido">Solo letras y números, máximo 20 caracteres</string>
+    <string name="msj_descripcion_invalido">Máximo 200 caracteres</string>
     <string name="msj_registro_usuario_exitoso">Los datos han sido registrados de manera exitosa</string>
+
+    <string name="msj_juego_no_encontrado">Juego no encontrado</string>
+    <string name="msj_error_conexion">Error de conexion</string>
 
 
     <string name="menu_home">Home</string>
@@ -141,4 +144,12 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="title_activity_scrolling_informacion_juego">ScrollingInformacionJuego</string>
+    <string name="lbl_TituloJuego">Título de juego</string>
+    <string name="lbl_AnioLanzamiento">Año de lanzamiento</string>
+    <string name="lbl_Calificacion">Calificación</string>
+    <string name="lbl_Disponibilidad">Disponible en:</string>
+    <string name="lbl_Reseñar">Reseñar</string>
+    <string name="lbl_VerResenias">Ver reseñas</string>
+    <string name="lbl_Descripcion">Descripción</string>
 </resources>

@@ -33,13 +33,14 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_nombre"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:padding="15dp"
                 android:background="@color/white"
                 android:hint="@string/txv_Nombre"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:maxLength="80"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -50,12 +51,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_primer_apellido"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:padding="15dp"
                 android:background="@color/white"
                 android:hint="@string/txv_PrimerApellido"
+                android:maxLength="80"
                 android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,12 +69,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_segundo_apellido"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:padding="15dp"
                 android:background="@color/white"
                 android:hint="@string/txv_SegundoApellido"
+                android:maxLength="80"
                 android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,12 +87,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_nombre_usuario"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:padding="15dp"
                 android:background="@color/white"
                 android:hint="@string/txv_NombreUsuario"
+                android:maxLength="20"
                 android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,12 +105,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_descripcion"
                 android:layout_width="match_parent"
-                android:layout_height="67dp"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:hint="@string/txv_Descripcion"
                 android:padding="15dp"
                 android:textColor="@color/black"
                 android:textSize="25sp"
+                android:maxLength="200"
                 android:textStyle="bold" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,12 +123,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_correo"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:padding="15dp"
                 android:background="@color/white"
                 android:hint="@string/txv_Correo"
+                android:maxLength="255"
                 android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,12 +141,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_contrasenia"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:padding="15dp"
                 android:background="@color/white"
                 android:hint="@string/txv_contrasenia"
+                android:maxLength="255"
                 android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 

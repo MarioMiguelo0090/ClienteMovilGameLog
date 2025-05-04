@@ -58,7 +58,12 @@ public class MenuActivity extends AppCompatActivity {
             } else if (id == R.id.nav_historial_resenia) {
                 startActivity(new Intent(MenuActivity.this, ScrollingHistorialResenia.class));
             } else if (id == R.id.nav_salir) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                getSharedPreferences("loginPrefs", MODE_PRIVATE)
+                        .edit()
+                        .clear()
+                        .apply();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
             binding.drawerLayout.closeDrawers();

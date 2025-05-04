@@ -22,8 +22,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:queryHint="@string/search_BuscarJuego"
-            android:textColorHint="@color/white"
+            android:background="@color/white"
+            android:textColorHint="@color/black"
             android:iconifiedByDefault="false" />
+
+        <ImageView
+            android:id="@+id/img_juego"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txv_titulo_juego"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
 
 
 

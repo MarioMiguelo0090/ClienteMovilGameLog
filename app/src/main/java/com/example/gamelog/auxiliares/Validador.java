@@ -5,7 +5,7 @@ import android.util.Patterns;
 public class Validador {
     private static final String PATRON_CONTRASENIA = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&/()_#^+=-]).{8,}$";
 
-    private static final String PATRON_NOMBRE_USUARIO = "^[a-zA-Z0-9]{1,50}$";
+    private static final String PATRON_NOMBRE_USUARIO = "^[a-zA-Z0-9]{1,20}$";
 
     private static final String PATRON_SOLO_LETRAS = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$";
 
@@ -34,6 +34,6 @@ public class Validador {
     }
 
     public static boolean esDescripcionValida(String descripcion) {
-        return descripcion.length() <= 250;
+        return descripcion.length() <= 200;
     }
 }
