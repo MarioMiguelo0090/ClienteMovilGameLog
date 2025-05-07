@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".ScrollingInformacionJuego"
         tools:showIn="@layout/activity_scrolling_informacion_juego">
 
@@ -43,6 +43,7 @@
             android:padding="8dp"
             app:layout_constraintTop_toBottomOf="@id/txv_titulo_juego"
             app:layout_constraintStart_toStartOf="parent"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
@@ -52,6 +53,7 @@
             android:text="@string/lbl_Calificacion"
             android:paddingStart="8dp"
             android:paddingTop="8dp"
+            android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/txv_anio_lanzamiento"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -64,6 +66,8 @@
             android:stepSize="0.5"
             app:layout_constraintTop_toBottomOf="@id/txv_calificacion"
             app:layout_constraintStart_toStartOf="parent"
+            android:isIndicator="true"
+            android:progressTint="@android:color/holo_orange_light"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
@@ -72,6 +76,7 @@
             android:layout_height="wrap_content"
             android:text="@string/lbl_Disponibilidad"
             android:padding="8dp"
+            android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/ratingBar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -91,16 +96,26 @@
                 android:id="@+id/btn_reseniar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
+                android:textSize="20sp"
                 android:text="@string/lbl_Reseñar" />
 
             <Button
                 android:id="@+id/btn_ver_resenias"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
+                android:textSize="20sp"
                 android:text="@string/lbl_VerResenias" />
+
+            <ImageView
+                android:id="@+id/img_agregar_lista"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:src="@drawable/ic_agregar_lista"/>
         </LinearLayout>
+
 
         <TextView
             android:id="@+id/txv_descripcion"

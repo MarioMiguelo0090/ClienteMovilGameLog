@@ -9,10 +9,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.gamelog.auxiliares.ApiGameLog;
+import com.example.gamelog.auxiliares.EncriptadorContrasena;
+import com.example.gamelog.auxiliares.Usuario;
 import com.example.gamelog.auxiliares.Validador;
 import com.example.gamelog.databinding.ActivityCreacionCuentaBinding;
 import com.example.gamelog.databinding.ActivityMainBinding;
 import com.example.gamelog.databinding.ActivityRecuperarContraseniaBinding;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CreacionCuenta extends AppCompatActivity {
     ActivityCreacionCuentaBinding binding;
@@ -36,19 +45,58 @@ public class CreacionCuenta extends AppCompatActivity {
 
     private void registrarUsuario(){
         if(verificarCampos()){
-            Toast.makeText(this, getString(R.string.msj_registro_usuario_exitoso), Toast.LENGTH_LONG).show();
-            finish();
+            registrarNuevoUsuarioEnServidor();
         }
+    }
+
+    private void registrarNuevoUsuarioEnServidor(){
+        Usuario usuario=new Usuario();
+        usuario.setNombre(binding.editNombre.getText().toString().trim());
+        usuario.setPrimerApellido(binding.editPrimerApellido.getText().toString().trim());
+        usuario.setSegundoApellido(binding.editSegundoApellido.getText().toString().trim());
+        usuario.setNombreDeUsuario(binding.editNombreUsuario.getText().toString().trim());
+        usuario.setDescripcion(binding.editDescripcion.getText().toString().trim());
+        usuario.setCorreo(binding.editCorreo.getText().toString().trim());
+        usuario.setContrasenia(EncriptadorContrasena.encriptarSHA256(binding.editContrasenia.getText().toString().trim()));
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.1.108:1234/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiGameLog api = retrofit.create(ApiGameLog.class);
+        Call<Object> call = api.registrarAcceso(usuario);
+
+        call.enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(CreacionCuenta.this, getString(R.string.msj_registro_usuario_exitoso), Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    try {
+                        String errorBody = response.errorBody().string();
+                        Toast.makeText(CreacionCuenta.this, "Error: " + errorBody, Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                        Toast.makeText(CreacionCuenta.this, "Error desconocido", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                Toast.makeText(CreacionCuenta.this, "Error de conexión: " + t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private boolean verificarCampos(){
         boolean validacion=true;
         String nombre=binding.editNombre.getText().toString().trim();
-        String primerApellido=binding.editPrimerApellido.getText().toString().trim();;
-        String segundoApellido=binding.editSegundoApellido.getText().toString().trim();;
-        String nombreUsuario=binding.editNombreUsuario.getText().toString().trim();;
-        String descripcion=binding.editDescripcion.getText().toString().trim();;
-        String correo=binding.editCorreo.getText().toString().trim();;
+        String primerApellido=binding.editPrimerApellido.getText().toString().trim();
+        String segundoApellido=binding.editSegundoApellido.getText().toString().trim();
+        String nombreUsuario=binding.editNombreUsuario.getText().toString().trim();
+        String descripcion=binding.editDescripcion.getText().toString().trim();
+        String correo=binding.editCorreo.getText().toString().trim();
         String contrasenia=binding.editContrasenia.getText().toString().trim();
         if(!Validador.esNombreValido(nombre)){
             binding.editNombre.setError(getString(R.string.msj_nombre_invalido));

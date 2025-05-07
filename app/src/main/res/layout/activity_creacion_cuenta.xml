@@ -22,8 +22,8 @@
             android:text="@string/txv_CreacionCuenta"
             android:textColor="@color/white"
             android:textAlignment="center"
-            android:textSize="50sp"
-            android:fontFamily="@font/bangers"/>
+            android:textSize="45sp"
+            android:fontFamily="@font/anchox"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

@@ -21,12 +21,14 @@
             android:layout_height="wrap_content"
             android:text="@string/txv_Calificacion"
             android:textColor="@color/white"
-            android:textSize="50sp"/>
+            android:textSize="50sp"
+            android:fontFamily="@font/anchox"/>
 
         <RatingBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
+            android:progressTint="@android:color/holo_orange_light"
             />
 
         <TextView
@@ -34,7 +36,8 @@
             android:layout_height="wrap_content"
             android:text="@string/txv_Opinion"
             android:textColor="@color/white"
-            android:textSize="50sp"/>
+            android:textSize="50sp"
+            android:fontFamily="@font/anchox"/>
 
         <EditText
             android:id="@+id/edit_opinion"

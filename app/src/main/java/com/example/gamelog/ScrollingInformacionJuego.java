@@ -55,5 +55,21 @@ public class ScrollingInformacionJuego extends AppCompatActivity {
         binding.contentScrollingInformacion.txvAnioLanzamiento.setText(fechaLanzamiento);
         binding.contentScrollingInformacion.ratingBar.setRating((float) calificacion);
         Glide.with(this).load(imagenFondo).into(binding.contentScrollingInformacion.imageJuego);
+        binding.contentScrollingInformacion.btnReseniar.setOnClickListener(v -> {
+            abrirVentanaResenia();
+        });
+        binding.contentScrollingInformacion.btnVerResenias.setOnClickListener(v->{
+            abrirResenias();
+        });
+    }
+
+    private void abrirVentanaResenia(){
+        Intent intentReseniaJuego=new Intent(this, ReseniaJuego.class);
+        startActivity(intentReseniaJuego);
+    }
+
+    private void abrirResenias(){
+        Intent intentReseniaJugadores=new Intent(this,ReseniaJugadores.class);
+        startActivity(intentReseniaJugadores);
     }
 }
