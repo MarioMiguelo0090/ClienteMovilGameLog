@@ -4,17 +4,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 import android.content.Intent;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.gamelog.auxiliares.RAWGService;
+import com.example.gamelog.interfaces.RAWGService;
 import com.example.gamelog.auxiliares.Juego;
 
 import retrofit2.Retrofit;

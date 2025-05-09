@@ -42,9 +42,15 @@
     <string name="msj_descripcion_invalido">Máximo 200 caracteres</string>
     <string name="msj_registro_usuario_exitoso">Los datos han sido registrados de manera exitosa</string>
 
-    <string name="msj_juego_no_encontrado">Juego no encontrado</string>
-    <string name="msj_error_conexion">Error de conexion</string>
+    <string name="msj_fechas_incorrectas">La fecha de inicio debe ser anterior a la fecha de fin</string>
+    <string name="msj_seleccion_tendencia_error">Seleccione una opción de tendencia</string>
 
+    <string name="msj_juego_no_encontrado">Juego no encontrado</string>
+    <string name="msj_error_conexion">Error de conexión</string>
+
+    <string name="msj_correo_nombre_usuario_registrado_anteriormente">El correo o nombre de usuario ya está registrado.</string>
+    <string name="msj_error_conexion_bd">Error de conexión con la base de datos.</string>
+    <string name="msj_error_conexion_servidor">No se pudo conectar con el servidor. Verifica tu conexión a internet.</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -52,6 +58,7 @@
     <string name="buscar_juego">Buscar juego</string>
     <string name="buscar_perfil">Buscar perfil</string>
     <string name="mis_resenias">Mis reseñas</string>
+    <string name="edicion_perfil">Editar perfil</string>
     <string name="cerrar_sesion">Cerrar sesion</string>
     <string name="opciones">Opciones</string>
     <string name="title_activity_scrolling_historial_resenia">ScrollingHistorialResenia</string>
@@ -152,4 +159,13 @@
     <string name="lbl_Reseñar">Reseñar</string>
     <string name="lbl_VerResenias">Ver reseñas</string>
     <string name="lbl_Descripcion">Descripción</string>
+    <string name="txv_EditarPerfil">Editar perfil</string>
+    <string name="btn_GuardarGlobal">Guardar</string>
+    <string name="msj_revival_retro">El reporte seleccionado muestra los juegos retros más reseñados por la comunidad de acuerdo a las fechas seleccionadas, dichos juegos han generado nostalgia y recuerdos dentro de la comunidad gamer.</string>
+    <string name="msj_juegos_mas_reseniados">El reporte seleccionado muestra los juegos más reseñados por la comunidad de acuerdo a las fechas seleccionadas, dichos juegos han generado popularidad y relevancia dentro de la comunidad gamer.</string>
+    <string name="rb_RevivalRetro">Revival retro</string>
+    <string name="rb_JuegosMasReseniados">Juegos más reseñados</string>
+    <string name="msj_seleccionar_fecha">Seleccionar fecha</string>
+    <string name="msj_fecha_inicio_consulta">Fecha de inicio de periodo de consulta:</string>
+    <string name="msj_fecha_fin_consulta">Fecha de fin de periodo de consulta:</string>
 </resources>

@@ -57,6 +57,8 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(new Intent(MenuActivity.this, BusquedaPerfil.class));
             } else if (id == R.id.nav_historial_resenia) {
                 startActivity(new Intent(MenuActivity.this, ScrollingHistorialResenia.class));
+            }else if(id==R.id.nav_edicion_perfil){
+                startActivity(new Intent(MenuActivity.this, EdicionPerfil.class));
             } else if (id == R.id.nav_salir) {
                 getSharedPreferences("loginPrefs", MODE_PRIVATE)
                         .edit()
@@ -69,9 +71,14 @@ public class MenuActivity extends AppCompatActivity {
             binding.drawerLayout.closeDrawers();
             return true;
         });
+        binding.appBarMenu.contenidoMenu.btnVerReporte.setOnClickListener(v -> {
+           consultarReportes();
+        });
+    }
 
-
-
+    private void consultarReportes(){
+        Intent intentReporteTendencias=new Intent(this, ReporteTendencias.class);
+        startActivity(intentReporteTendencias);
     }
 
     @Override

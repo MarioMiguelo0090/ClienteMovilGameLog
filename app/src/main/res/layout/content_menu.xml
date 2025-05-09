@@ -17,4 +17,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation2" />
+
+    <Button
+        android:id="@+id/btn_ver_reporte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reporte de tendencias"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

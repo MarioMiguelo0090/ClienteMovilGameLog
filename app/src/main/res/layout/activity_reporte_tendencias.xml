@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gray"
+        android:padding="10dp"
+        tools:context=".ReporteTendencias">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tendencias en reseñas"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="40sp"
+            android:fontFamily="@font/anchox"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msj_fecha_inicio_consulta"
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/txt_fecha_inicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msj_seleccionar_fecha"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:clickable="true"
+            android:background="@drawable/borde_textview"
+            android:focusable="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msj_fecha_fin_consulta"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/txt_fecha_fin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msj_seleccionar_fecha"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/borde_textview" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_revival_retro"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:text="@string/rb_RevivalRetro"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/rb_juego_mas_reseniado"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:text="@string/rb_JuegosMasReseniados"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_mostrar_grafica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mostrar grafica"/>
+
+        <TextView
+            android:id="@+id/txv_revival_retro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/msj_revival_retro"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/txv_juegos_mas_reseniado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/msj_juegos_mas_reseniados"
+            android:visibility="gone"/>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bar_chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            />
+
+
+    </LinearLayout>
+</layout>

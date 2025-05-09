@@ -18,6 +18,11 @@
             android:title="@string/mis_resenias" />
 
         <item
+            android:id="@+id/nav_edicion_perfil"
+            android:icon="@drawable/ic_edicion_perfil"
+            android:title="@string/edicion_perfil" />
+
+        <item
             android:id="@+id/nav_salir"
             android:icon="@drawable/ic_cerrar_sesion"
             android:title="@string/cerrar_sesion" />

@@ -1,4 +1,6 @@
-package com.example.gamelog.auxiliares;
+package com.example.gamelog.interfaces;
+
+import com.example.gamelog.auxiliares.Juego;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

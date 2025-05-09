@@ -3,19 +3,14 @@ package com.example.gamelog;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.gamelog.auxiliares.ApiGameLog;
+import com.example.gamelog.auxiliares.APICliente;
+import com.example.gamelog.interfaces.ApiGameLogAcceso;
 import com.example.gamelog.auxiliares.EncriptadorContrasena;
 import com.example.gamelog.auxiliares.Usuario;
 import com.example.gamelog.auxiliares.Validador;
 import com.example.gamelog.databinding.ActivityCreacionCuentaBinding;
-import com.example.gamelog.databinding.ActivityMainBinding;
-import com.example.gamelog.databinding.ActivityRecuperarContraseniaBinding;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -58,14 +53,8 @@ public class CreacionCuenta extends AppCompatActivity {
         usuario.setDescripcion(binding.editDescripcion.getText().toString().trim());
         usuario.setCorreo(binding.editCorreo.getText().toString().trim());
         usuario.setContrasenia(EncriptadorContrasena.encriptarSHA256(binding.editContrasenia.getText().toString().trim()));
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.108:1234/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        ApiGameLog api = retrofit.create(ApiGameLog.class);
+        ApiGameLogAcceso api = APICliente.getRetrofit().create(ApiGameLogAcceso.class);
         Call<Object> call = api.registrarAcceso(usuario);
-
         call.enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
@@ -73,18 +62,21 @@ public class CreacionCuenta extends AppCompatActivity {
                     Toast.makeText(CreacionCuenta.this, getString(R.string.msj_registro_usuario_exitoso), Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
-                    try {
-                        String errorBody = response.errorBody().string();
-                        Toast.makeText(CreacionCuenta.this, "Error: " + errorBody, Toast.LENGTH_LONG).show();
-                    } catch (Exception e) {
-                        Toast.makeText(CreacionCuenta.this, "Error desconocido", Toast.LENGTH_LONG).show();
+                    int statusCode = response.code();
+                    switch (statusCode) {
+                        case 400:
+                            Toast.makeText(CreacionCuenta.this, getString(R.string.msj_correo_nombre_usuario_registrado_anteriormente), Toast.LENGTH_LONG).show();
+                            break;
+                        case 500:
+                            Toast.makeText(CreacionCuenta.this, getString(R.string.msj_error_conexion_bd), Toast.LENGTH_LONG).show();
+                            break;
                     }
                 }
             }
 
             @Override
             public void onFailure(Call<Object> call, Throwable t) {
-                Toast.makeText(CreacionCuenta.this, "Error de conexión: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(CreacionCuenta.this, getString(R.string.msj_error_conexion_servidor), Toast.LENGTH_LONG).show();
             }
         });
     }
