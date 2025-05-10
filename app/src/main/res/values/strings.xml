@@ -45,8 +45,10 @@
     <string name="msj_fechas_incorrectas">La fecha de inicio debe ser anterior a la fecha de fin</string>
     <string name="msj_seleccion_tendencia_error">Seleccione una opción de tendencia</string>
 
-    <string name="msj_juego_no_encontrado">Juego no encontrado</string>
+    <string name="msj_juego_no_encontrado">Juego no encontrado.</string>
     <string name="msj_error_conexion">Error de conexión</string>
+    <string name="msj_jugador_no_encontrado">Jugador no encontrado.</string>
+    <string name="msj_volver_inicio_sesion">No autorizado. Inicia sesión nuevamente.</string>
 
     <string name="msj_correo_nombre_usuario_registrado_anteriormente">El correo o nombre de usuario ya está registrado.</string>
     <string name="msj_error_conexion_bd">Error de conexión con la base de datos.</string>

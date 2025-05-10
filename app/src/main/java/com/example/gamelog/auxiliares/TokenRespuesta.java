@@ -1,13 +1,23 @@
 package com.example.gamelog.auxiliares;
 
-public class TokenRespuesta {
-    private String token;
+import com.google.gson.annotations.SerializedName;
 
-    public String getToken() {
-        return token;
+import java.util.List;
+
+public class TokenRespuesta {
+    private boolean error;
+    private int estado;
+    private List<Usuario> cuenta;
+
+    public boolean isError() {
+        return error;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public int getEstado() {
+        return estado;
+    }
+
+    public List<Usuario> getCuenta() {
+        return cuenta;
     }
 }

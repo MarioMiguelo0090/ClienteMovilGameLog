@@ -1,5 +1,7 @@
 package com.example.gamelog;
 
+import static com.example.gamelog.auxiliares.Constantes.TIPO_USUARIO_JUGADOR;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -73,18 +75,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void hacerLogin(String correo, String contrasenia) {
-        String tipoDeUsuario = "Jugador";
-        LoginRequest request = new LoginRequest(correo, contrasenia,tipoDeUsuario);
+        LoginRequest request = new LoginRequest(correo, contrasenia,TIPO_USUARIO_JUGADOR);
         ApiGameLogLogin api = APICliente.getRetrofit().create(ApiGameLogLogin.class);
         api.login(request).enqueue(new retrofit2.Callback<TokenRespuesta>() {
             @Override
             public void onResponse(Call<TokenRespuesta> call, retrofit2.Response<TokenRespuesta> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    getSharedPreferences("loginPrefs", MODE_PRIVATE)
-                            .edit()
-                            .putBoolean("isLoggedIn", true)
-                            .putString("token", response.body().getToken())
-                            .apply();
+                    String token = response.headers().get("access_token");
+                    if (token != null) {
+                        getSharedPreferences("loginPrefs", MODE_PRIVATE)
+                                .edit()
+                                .putBoolean("isLoggedIn", true)
+                                .putString("token", token)
+                                .apply();
+                        Log.d("TOKEN_DEBUG", "Token guardado: " + token);
+                    }
                     abrirMenuAplicacion();
                 } else if (response.code() == 400) {
                     binding.editContrasenia.setError("Credenciales inválidas");
